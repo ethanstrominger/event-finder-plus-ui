@@ -1,0 +1,1 @@
+- Test when no records that get appropriate message

@@ -55,12 +55,9 @@ const onChangePwSuccess = function (response) {
 
 const onChangePwFail = function (response) {
   commonUi.showError('Change pw failed', response)
-
-  // console.log(response)
 }
 
 const onSignOutSuccess = function (response) {
-  // console.log('XXXXXXX')
   commonUi.showMessage('Successfully signed out')
   commonUi.hideScreens()
   $('#buttons-when-signed-in').hide()

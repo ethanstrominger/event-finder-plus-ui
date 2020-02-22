@@ -1,0 +1,16 @@
+{{#unless calendar_links}}
+    <p>There are no calendar links.  Click New to add an item.</p>
+{{/unless}}
+{{#each calendar_links as |calendar_link|}}
+  {{log calendar_link}}
+  <section data-id="{{calendar_link.id}}">
+    <h6>Title:</h6>
+    <h3>
+      {{calendar_link.name}}
+    </h3>
+    <h6>Calendar:</h6>
+    <p>
+      {{limit calendar_link.url 15}}
+    </p>
+  </section>
+{{/each}}

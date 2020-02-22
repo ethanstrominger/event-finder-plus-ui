@@ -21,16 +21,15 @@ const ajaxCall = (method, endPoint, data, useToken) => {
   if (useToken) {
     ajaxArg.headers =
       {
+        // store.user defined in onSignInSuccess, includes token
         Authorization: `Token  token=${store.user.token}`
       }
   }
 
-  // if defined, add data property to ajax argument
   if (data !== undefined) {
     ajaxArg.data = data
   }
 
-  // make ajax call
   return $.ajax(ajaxArg)
 }
 

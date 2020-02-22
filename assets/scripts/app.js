@@ -18,7 +18,7 @@ const _setupEventListeners = () => {
 
 // use require without a reference to ensure a file is bundled
 // require('./example')
-const store = require('./store.js')
+// const store = require('./store.js')
 $(() => {
   // store.currentBoard.player = 'x'
   _setupEventListeners()
