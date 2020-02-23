@@ -2,8 +2,7 @@ const hideScreens = () => {
   $('#sign-in-form').hide()
   $('#sign-up-form').hide()
   $('#change-password-form').hide()
-  $('#detail').hide()
-  $('#data-section').hide()
+  $('#main-div').html('')
 }
 
 const showScreen = (screen) => {
