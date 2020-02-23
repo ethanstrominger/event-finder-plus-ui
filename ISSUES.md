@@ -1,1 +1,2 @@
 - Test when no records that get appropriate message
+- Refactor index.html to all use handlebars to modularize

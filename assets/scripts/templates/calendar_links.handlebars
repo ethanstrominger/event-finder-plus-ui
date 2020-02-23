@@ -1,16 +1,17 @@
+<p>This is here</p>
 {{#unless calendar_links}}
     <p>There are no calendar links.  Click New to add an item.</p>
 {{/unless}}
+<table border="1">
 {{#each calendar_links as |calendar_link|}}
   {{log calendar_link}}
-  <section data-id="{{calendar_link.id}}">
-    <h6>Title:</h6>
-    <h3>
+  <tr class="calendar-detail"  data-id="{{calendar_link.id}}">
+    <td>
       {{calendar_link.name}}
-    </h3>
-    <h6>Calendar:</h6>
-    <p>
+    </td>
+     <td>
       {{limit calendar_link.url 15}}
-    </p>
-  </section>
+    </td>
+  </tr>
 {{/each}}
+</table>

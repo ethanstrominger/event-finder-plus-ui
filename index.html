@@ -1,55 +1,61 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Event Finder Plus</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>Event Finder Plus</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-    <body>
-      <h1>Event Finder Plus</h1>
-      <div id="home" class="home">
-        <div id="buttons-when-signed-out" class="view" style="margin: 0; padding: 0">
-          <button id="sign-in-button" class="btn btn-primary btn-large button">Sign In</button>
-          <button id="sign-up-button" class="btn btn-primary btn-large button">Sign Up</button>
-        </div>
-        <div id="buttons-when-signed-in" style="display: None" class="view">
-          <button id="sign-out-button" class="btn btn-primary btn-large button">Sign Out</button>
-          <button id="change-password-button" class="btn btn-primary btn-large button">Change Pasword</button>
-        </div>
-      </div>
-      <div id="message" class="view info"></div>
-      <div id="stats" class="view info"></div>
-      <form id="sign-up-form" class="view form" style="display: None">
-        <label for="email">Email</label>
-        <input name="credentials[email]" class="form-control" type="text" placeholder="an@example.com">
-        <label for="password">Password</label>
-        <input name="credentials[password]" class="form-control" type="password" placeholder="Enter password">
-        <label for="password_confirmation">Confirm Password</label>
-        <input name="credentials[password_confirmation]" class="form-control" type="password" placeholder="Confirm password">
-        <input type="submit" value="Sign Up" class="btn btn-primary btn-large button">
-      </form>
-      <form id="sign-in-form" class="view form" style="display: none">
-        <label for="email">Email</label>
-        <input name="credentials[email]" class="form-control" type="text" placeholder="an@example.com">
-        <label for="password">Password</label>
-        <input name="credentials[password]" class="form-control" type="password" placeholder="Enter password">
-        <input type="submit" value="Sign In" class="btn btn-primary btn-large button">
-      </form>
-      <form id="change-password-form" class="view form" style="display: None">
-        <label for="old">Old Password</label>
-        <input name="passwords[old]" type="password" class="form-control" placeholder="Enter old password">
-        <label for="new">New Password</label>
-        <input name="passwords[new]" type="password" class="form-control" placeholder="Enter new password">
-        <input type="submit" value="Change Password" class="btn btn-primary btn-large button">
-      </form>
-      <div id="data-section">
-      </div>
-    </body>
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <h1>Event Finder Plus</h1>
+  <div id="home" class="home">
+    <div id="buttons-when-signed-out" class="view" style="margin: 0; padding: 0">
+      <button id="sign-in-button" class="btn btn-primary btn-large button">Sign In</button>
+      <button id="sign-up-button" class="btn btn-primary btn-large button">Sign Up</button>
+    </div>
+    <div id="buttons-when-signed-in" style="display: None" class="view">
+      <button id="sign-out-button" class="btn btn-primary btn-large button">Sign Out</button>
+      <button id="change-password-button" class="btn btn-primary btn-large button">Change Pasword</button>
+    </div>
+  </div>
+  <div id="message" class="view info"></div>
+  <div id="stats" class="view info"></div>
+
+  <form id="sign-up-form" class="view form" style="display: None">
+    <label for="email">Email</label>
+    <input name="credentials[email]" class="form-control" type="text" placeholder="an@example.com">
+    <label for="password">Password</label>
+    <input name="credentials[password]" class="form-control" type="password" placeholder="Enter password">
+    <label for="password_confirmation">Confirm Password</label>
+    <input name="credentials[password_confirmation]" class="form-control" type="password" placeholder="Confirm password">
+    <input type="submit" value="Sign Up" class="btn btn-primary btn-large button">
+  </form>
+
+  <form id="sign-in-form" class="view form" style="display: none">
+    <label for="email">Email</label>
+    <input name="credentials[email]" class="form-control" type="text" placeholder="an@example.com">
+    <label for="password">Password</label>
+    <input name="credentials[password]" class="form-control" type="password" placeholder="Enter password">
+    <input type="submit" value="Sign In" class="btn btn-primary btn-large button">
+  </form>
+
+  <form id="change-password-form" class="view form" style="display: None">
+    <label for="old">Old Password</label>
+    <input name="passwords[old]" type="password" class="form-control" placeholder="Enter old password">
+    <label for="new">New Password</label>
+    <input name="passwords[new]" type="password" class="form-control" placeholder="Enter new password">
+    <input type="submit" value="Change Password" class="btn btn-primary btn-large button">
+  </form>
+
+  <div id="data-section">
+  </div>
+</body>
+
 </html>
