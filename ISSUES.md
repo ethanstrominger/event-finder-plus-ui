@@ -1,2 +1,9 @@
 - Test when no records that get appropriate message
 - Refactor index.html to all use handlebars to modularize
+- Put boxes around forms
+- Make URL a bigger text field or test length
+- Match mockup
+- Make fields required
+- Test failure conditions
+- Investigate code coverage
+- And more...

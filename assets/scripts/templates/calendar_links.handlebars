@@ -4,7 +4,7 @@
 <table border="1">
 {{#each calendar_links as |calendar_link|}}
   {{log calendar_link}}
-  <tr class="calendar-detail"  data-id="{{calendar_link.id}}">
+  <tr class="calendar-detail"  data-data-obj="{{JSONtoString calendar_link}}">
     <td>
       {{calendar_link.name}}
     </td>
