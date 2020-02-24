@@ -3,6 +3,14 @@
 const api = require('./api')
 const ui = require('./ui')
 
+const onGetIndex = (event) => {
+  console.log('XXXXXXXXXXX')
+  event.preventDefault()
+  api.getCalendars()
+    .then(ui.ongetCalendarsSuccess)
+    .catch(ui.onGetcalendarFail)
+}
+
 const onDelete = (event) => {
   event.preventDefault()
   console.log('gotoCalendar List')
@@ -26,5 +34,6 @@ const onUpdate = (event) => {
 
 module.exports = {
   onUpdate,
-  onDelete
+  onDelete,
+  onGetIndex
 }

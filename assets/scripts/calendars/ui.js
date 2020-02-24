@@ -7,6 +7,7 @@ const gotoCalendar = (event) => {
   const calendarDetail = $(event.target).closest('tr').data('data-obj')
   const showHtml = showCalendarTemplate(calendarDetail)
   commonUi.hideScreens()
+  $('#details-div').show()
   $('#details-div').html(showHtml)
   event.preventDefault()
 }

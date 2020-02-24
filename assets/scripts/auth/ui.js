@@ -21,12 +21,14 @@ const gotoChangePasswordScreen = () => {
 }
 
 const onSignUpSuccess = function (response) {
+  console.log('Made it here')
   commonUi.showMessage(response.user.email + ' successfully signed up')
   $('#sign-up-form').hide()
   $('#sign-up-form').trigger('reset')
 }
 
 const onSignUpFail = function (response) {
+  console.log('Sign up failed')
   commonUi.showError('Sign up failed', response)
   $('#sign-up-form').trigger('reset')
 }

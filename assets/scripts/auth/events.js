@@ -2,8 +2,9 @@
 const getFormFields = require('./../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
-const calendarUi = require('../calendars/ui')
-const calendarApi = require('../calendars/api')
+// const calendarUi = require('../calendars/ui')
+// const calendarApi = require('../calendars/api')
+const calendarEvents = require('../calendars/events')
 
 const onClickSignUp = (event) => {
   ui.gotoSignUpScreen()
@@ -33,9 +34,7 @@ const onSignIn = (event) => {
   api.signIn(signInData)
     .then(ui.onSignInSuccess)
     .then(function () {
-      calendarApi.getCalendars()
-        .then(calendarUi.ongetCalendarsSuccess)
-        .catch(calendarUi.onGetcalendarFail)
+      calendarEvents.onGetIndex(event)
     })
     .catch(ui.onSignInFail)
 }
