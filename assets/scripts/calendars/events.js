@@ -13,6 +13,12 @@ const onGetIndex = (event) => {
 
 const onDelete = (event) => {
   event.preventDefault()
+  console.log('On Delete')
+  const id = $(event.target).data('id')
+  api.deleteCalendar(id)
+    .then(api.getCalendars)
+    .then(ui.onGetCalendarsSuccess)
+    .catch(ui.onDeleteCalendarsFail)
 }
 
 const onUpdate = (event) => {
@@ -23,7 +29,7 @@ const onUpdate = (event) => {
   api.updateCalendar(formData)
     .then(api.getCalendars)
     .then(ui.onGetCalendarsSuccess)
-    .catch(ui.onGetCalendarsFail)
+    .catch(ui.onGetUpdateFail)
 }
 
 // const onSignUp = (event) => {

@@ -1,7 +1,7 @@
 const commonUi = require('./../commonUi')
 const showCalendarLinksTemplate = require('../templates/calendars.handlebars')
 const showCalendarTemplate = require('../templates/calendar.handlebars')
-const getFormFields = require('./../../../lib/get-form-fields')
+// const getFormFields = require('./../../../lib/get-form-fields')
 
 const gotoCalendar = (event) => {
   event.preventDefault()
@@ -16,7 +16,7 @@ const gotoCalendar = (event) => {
 const gotoCalendars = (event) => {
   event.preventDefault()
   const form = event.target.closest('form')
-  const values = getFormFields(form)
+  // const values = getFormFields(form)
   $(form).remove()
   commonUi.showScreen('#main-div')
   // $('#main-div').html('<p>Goto calendar list</p>')
@@ -32,12 +32,22 @@ const onGetCalendarsSuccess = (data) => {
 }
 
 const onGetCalendarsFail = (response) => {
-  commonUi.showError('Calendar Links could not be listed', response)
+  commonUi.showError('Calendars could not be listed', response)
+}
+
+const onDeleteFail = (response) => {
+  commonUi.showError('Calendar could not be deleted', response)
+}
+
+const onUpdateFail = (response) => {
+  commonUi.showError('Calendar could not be updated', response)
 }
 
 module.exports = {
   gotoCalendar,
   gotoCalendars,
   onGetCalendarsFail,
-  onGetCalendarsSuccess
+  onGetCalendarsSuccess,
+  onDeleteFail,
+  onUpdateFail
 }
