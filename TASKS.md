@@ -22,7 +22,10 @@ A2
 
 1. [X] refactor to move calendar logic that was in auth to calendar
 
-1. [ ] get update to update
+1. [X] get update to update
+
+1. [ ] show only records belonging to user (db)
+
 2. [ ] add return to list button + functionality
 3. [ ] add delete button + functionality
 
