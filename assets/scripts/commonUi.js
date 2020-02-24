@@ -20,7 +20,7 @@ const showMessage = (message) => {
 const showError = (message, response) => {
   $('#message').css('background-color', 'red')
   $('#message').css('color', 'white')
-  $('#message').text(message)
+  $('#message').text(`${message} (${response.status} ${response.statusText})`)
 }
 
 module.exports = {

@@ -5,6 +5,7 @@
 const authEvents = require('./auth/events')
 const authUi = require('./auth/ui')
 const calendarUi = require('./calendars/ui')
+const calendarEvents = require('./calendars/events')
 // const calendarEvents = require('./calendars/events')
 // const hideShow = require('./games/hide-show')
 
@@ -17,8 +18,7 @@ const _setupEventListeners = () => {
   $('#sign-out-button').on('click', authEvents.onClickSignOut)
   $('#change-password-button').on('click', authUi.gotoChangePasswordScreen)
   $('#main-div').on('click', '.calendar-row', calendarUi.gotoCalendar)
-  $('#details-div').on('submit', '#calendar-form', calendarUi.gotoCalendars)
-  $('#details-div').on('click', '#calendar-form', calendarUi.gotoCalendars)
+  $('#details-div').on('submit', '#calendar-form', calendarEvents.onUpdate)
   // $('#main-div').on('submit', '.calendar-form', calendarUi.gotoCalendar)
   // $('#main-div').on('click', '.delete-calendar-button', calendarEvents.onDelete)
   // $('#main-div').on('click', '#return-to-list-calendar-button', calendarUi.gotoCalendars)

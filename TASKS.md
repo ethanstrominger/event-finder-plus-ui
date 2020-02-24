@@ -18,8 +18,9 @@ A2
 2. [X] get update to call something
 3. [X] get update to hide current screen and show list screen
 
-A3
-1. [ ] rename calendars ink code (not table)
+1. [X] rename calendars link code (not table)
+
+1. [X] refactor to move calendar logic that was in auth to calendar
 
 1. [ ] get update to update
 2. [ ] add return to list button + functionality

@@ -2,24 +2,27 @@
 // const getFormFields = require('./../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
+const getFormFields = require('./../../../lib/get-form-fields')
 
 const onGetIndex = (event) => {
-  console.log('XXXXXXXXXXX')
   event.preventDefault()
   api.getCalendars()
-    .then(ui.ongetCalendarsSuccess)
-    .catch(ui.onGetcalendarFail)
+    .then(ui.onGetCalendarsSuccess)
+    .catch(ui.onGetCalendarsFail)
 }
 
 const onDelete = (event) => {
   event.preventDefault()
-  console.log('gotoCalendar List')
 }
 
 const onUpdate = (event) => {
+  // event.preventDefault()
   event.preventDefault()
-  api.getCalendars()
-    .then(ui.ongetCalendarsSuccess)
+  const form = event.target.closest('form')
+  const formData = getFormFields(form)
+  api.updateCalendar(formData)
+    .then(api.getCalendars)
+    .then(ui.onGetCalendarsSuccess)
     .catch(ui.onGetCalendarsFail)
 }
 

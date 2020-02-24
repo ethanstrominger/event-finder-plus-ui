@@ -25,12 +25,11 @@ const ajaxCall = (method, endPoint, data, useToken) => {
         Authorization: `Token  token=${store.user.token}`
       }
   }
-
   if (data !== undefined) {
     ajaxArg.data = data
   }
-
-  return $.ajax(ajaxArg)
+  const retVal = $.ajax(ajaxArg)
+  return retVal
 }
 
 module.exports = {
