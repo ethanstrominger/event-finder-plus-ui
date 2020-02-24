@@ -1,6 +1,7 @@
 const commonUi = require('./../commonUi')
 const showCalendarLinksTemplate = require('../templates/calendars.handlebars')
 const showCalendarTemplate = require('../templates/calendar.handlebars')
+const showNewCalendarTemplate = require('../templates/calendar-new.handlebars')
 // const getFormFields = require('./../../../lib/get-form-fields')
 
 const gotoCalendar = (event) => {
@@ -13,7 +14,16 @@ const gotoCalendar = (event) => {
   event.preventDefault()
 }
 
-const gotoCalendars = (event) => {
+const gotoNewCalendar = (event) => {
+  event.preventDefault()
+  console.log('Go to new calendar')
+  const showHtml = showNewCalendarTemplate()
+  commonUi.hideScreens()
+  $('#details-div').show()
+  $('#details-div').html(showHtml)
+}
+
+const backToCalendarsFromForm = (event) => {
   event.preventDefault()
   const form = event.target.closest('form')
   // const values = getFormFields(form)
@@ -45,7 +55,8 @@ const onUpdateFail = (response) => {
 
 module.exports = {
   gotoCalendar,
-  gotoCalendars,
+  backToCalendarsFromForm,
+  gotoNewCalendar,
   onGetCalendarsFail,
   onGetCalendarsSuccess,
   onDeleteFail,

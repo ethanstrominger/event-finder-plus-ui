@@ -11,9 +11,18 @@ const onGetIndex = (event) => {
     .catch(ui.onGetCalendarsFail)
 }
 
+const onCreate = (event) => {
+  event.preventDefault()
+  const form = event.target.closest('form')
+  const formData = getFormFields(form)
+  api.createCalendar(formData)
+    .then(api.getCalendars)
+    .then(ui.onGetCalendarsSuccess)
+    .catch(ui.onAddCalendarsFail)
+}
+
 const onDelete = (event) => {
   event.preventDefault()
-  console.log('On Delete')
   const id = $(event.target).data('id')
   api.deleteCalendar(id)
     .then(api.getCalendars)
@@ -42,6 +51,7 @@ const onUpdate = (event) => {
 // }
 
 module.exports = {
+  onCreate,
   onUpdate,
   onDelete,
   onGetIndex
