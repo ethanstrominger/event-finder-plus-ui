@@ -2,8 +2,8 @@
 const getFormFields = require('./../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
-const calendarLinksUi = require('../calendar_links/ui')
-const calendarLinksApi = require('../calendar_links/api')
+const calendarUi = require('../calendar_links/ui')
+const calendarApi = require('../calendar_links/api')
 
 const onClickSignUp = (event) => {
   ui.gotoSignUpScreen()
@@ -30,12 +30,13 @@ const onSignIn = (event) => {
   event.preventDefault()
   const form = event.target
   const signInData = getFormFields(form)
+  console.log('bbbb')
   api.signIn(signInData)
     .then(ui.onSignInSuccess)
     .then(function () {
-      calendarLinksApi.getCalendarLinks()
-        .then(calendarLinksUi.onGetCalendarLinksSuccess)
-        .catch(calendarLinksUi.onGetCalendarLinksFail)
+      calendarApi.getCalendars()
+        .then(calendarUi.ongetCalendarsSuccess)
+        .catch(calendarUi.onGetcalendarFail)
     })
     .catch(ui.onSignInFail)
 }

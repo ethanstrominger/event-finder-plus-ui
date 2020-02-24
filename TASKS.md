@@ -7,10 +7,18 @@ A1:
 1. [X] remove hide for main-div and detail
 1. [X] set html to empty instead of hide for main
 
-1. [ ] figure out how to store detail
-1. [ ] pass to goToCalendarLinksDetails
-1. [ ] pass to details handlebars
+1. [X] figure out how to store detail
+1. [X] pass to goToCalendarLinksDetails
+1. [X] pass to details handlebars
 
-1. [ ] use the data
+1. [X] use the data
 
-1. [ ] add buttonms to details screen
+1. [ ] add update button
+2. [ ] get update to call something
+3. [ ] get update to hide current screen and show list screen
+
+1. [ ] get update to update
+2. [ ] add return to list button + functionality
+3. [ ] add delete button + functionality
+
+1. [ ] add buttons to list screen for sign out and change password
