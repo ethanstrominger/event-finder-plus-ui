@@ -1,17 +1,17 @@
 const commonUi = require('./../commonUi')
-const showCalendarLinksTemplate = require('../templates/calendar_links.handlebars')
-const showCalendarDetailsTemplate = require('../templates/calendar_links_details.handlebars')
+const showCalendarLinksTemplate = require('../templates/calendars.handlebars')
+const showCalendarTemplate = require('../templates/calendar.handlebars')
 
-const gotoCalendarDetails = (event) => {
+const gotoCalendar = (event) => {
   event.preventDefault()
   const calendarDetail = $(event.target).closest('tr').data('data-obj')
-  const showHtml = showCalendarDetailsTemplate(calendarDetail)
+  const showHtml = showCalendarTemplate(calendarDetail)
   commonUi.hideScreens()
   $('#details-div').html(showHtml)
   event.preventDefault()
 }
 
-const gotoCalendarList = (event) => {
+const gotoCalendars = (event) => {
   event.preventDefault()
   const form = event.target.closest('form')
   $(form).remove()
@@ -22,7 +22,7 @@ const gotoCalendarList = (event) => {
 
 const ongetCalendarsSuccess = (data) => {
   const showHtml = showCalendarLinksTemplate({
-    calendar_links: data.calendar_links
+    calendars: data.calendar_links
   })
   commonUi.showScreen('#main-div')
   $('#main-div').html(showHtml)
@@ -33,8 +33,8 @@ const ongetCalendarsFail = (response) => {
 }
 
 module.exports = {
-  gotoCalendarDetails,
-  gotoCalendarList,
+  gotoCalendar,
+  gotoCalendars,
   ongetCalendarsFail,
   ongetCalendarsSuccess
 }

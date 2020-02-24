@@ -13,12 +13,18 @@ A1:
 
 1. [X] use the data
 
-1. [ ] add update button
-2. [ ] get update to call something
-3. [ ] get update to hide current screen and show list screen
+A2
+1. [X] add update button
+2. [X] get update to call something
+3. [X] get update to hide current screen and show list screen
+
+A3
+1. [ ] rename calendars ink code (not table)
 
 1. [ ] get update to update
 2. [ ] add return to list button + functionality
 3. [ ] add delete button + functionality
 
 1. [ ] add buttons to list screen for sign out and change password
+
+1. [ ] Refactor index.html to all use handlebars to modularize
