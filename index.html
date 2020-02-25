@@ -14,51 +14,55 @@
 </head>
 
 <body>
-  <h1>Event Finder Plus 0.1</h1>
-  <div id="home" class="home">
-    <div id="buttons-when-signed-out" class="view" style="margin: 0; padding: 0">
-      <button id="sign-in-button" class="btn btn-primary btn-large button">Sign In</button>
-      <button id="sign-up-button" class="btn btn-primary btn-large button">Sign Up</button>
+  <header>
+    <h1>Event Finder Plus 0.2</h1>
+  </header>
+
+  <nav id="buttons-when-signed-out" class="view" style="margin: 0; padding: 0">
+    <button id="sign-in-button" class="btn btn-primary btn-large button">Sign In</button>
+    <button id="sign-up-button" class="btn btn-primary btn-large button">Sign Up</button>
+  </nav>
+  <nav id="buttons-when-signed-in" style="display: None" class="view">
+    <button id="sign-out-button" class="btn btn-primary btn-large button">Sign Out</button>
+    <button id="change-password-button" class="btn btn-primary btn-large button">Change Pasword</button>
+    <button id="new-calendar-button" class="btn btn-primary btn-large button">New</button>
+  </nav>
+  <main>
+    <div id="message" class="view info"></div>
+
+    <form id="sign-up-form" class="view form" style="display: None">
+      <label for="email">Email</label>
+      <input name="credentials[email]" class="form-control" type="text" placeholder="an@example.com">
+      <label for="password">Password</label>
+      <input name="credentials[password]" class="form-control" type="password" placeholder="Enter password">
+      <label for="password_confirmation">Confirm Password</label>
+      <input name="credentials[password_confirmation]" class="form-control" type="password" placeholder="Confirm password">
+      <input type="submit" value="Sign Up" class="btn btn-primary btn-large button">
+    </form>
+
+    <form id="sign-in-form" class="view form" style="display: none">
+      <label for="email">Email</label>
+      <input name="credentials[email]" class="form-control" type="text" placeholder="an@example.com">
+      <label for="password">Password</label>
+      <input name="credentials[password]" class="form-control" type="password" placeholder="Enter password">
+      <input type="submit" value="Sign In" class="btn btn-primary btn-large button">
+    </form>
+
+    <form id="change-password-form" class="view form" style="display: None">
+      <label for="old">Old Password</label>
+      <input name="passwords[old]" type="password" class="form-control" placeholder="Enter old password">
+      <label for="new">New Password</label>
+      <input name="passwords[new]" type="password" class="form-control" placeholder="Enter new password">
+      <input type="submit" value="Change Password" class="btn btn-primary btn-large button">
+    </form>
+
+    <div id="main-div">
     </div>
-    <div id="buttons-when-signed-in" style="display: None" class="view">
-      <button id="sign-out-button" class="btn btn-primary btn-large button">Sign Out</button>
-      <button id="change-password-button" class="btn btn-primary btn-large button">Change Pasword</button>
-      <button id="new-calendar-button" class="btn btn-primary btn-large button">New</button>
+
+    <div id="details-div">
     </div>
-  </div>
-  <div id="message" class="view info"></div>
-  <div id="stats" class="view info"></div>
 
-  <form id="sign-up-form" class="view form" style="display: None">
-    <label for="email">Email</label>
-    <input name="credentials[email]" class="form-control" type="text" placeholder="an@example.com">
-    <label for="password">Password</label>
-    <input name="credentials[password]" class="form-control" type="password" placeholder="Enter password">
-    <label for="password_confirmation">Confirm Password</label>
-    <input name="credentials[password_confirmation]" class="form-control" type="password" placeholder="Confirm password">
-    <input type="submit" value="Sign Up" class="btn btn-primary btn-large button">
-  </form>
-
-  <form id="sign-in-form" class="view form" style="display: none">
-    <label for="email">Email</label>
-    <input name="credentials[email]" class="form-control" type="text" placeholder="an@example.com">
-    <label for="password">Password</label>
-    <input name="credentials[password]" class="form-control" type="password" placeholder="Enter password">
-    <input type="submit" value="Sign In" class="btn btn-primary btn-large button">
-  </form>
-
-  <form id="change-password-form" class="view form" style="display: None">
-    <label for="old">Old Password</label>
-    <input name="passwords[old]" type="password" class="form-control" placeholder="Enter old password">
-    <label for="new">New Password</label>
-    <input name="passwords[new]" type="password" class="form-control" placeholder="Enter new password">
-    <input type="submit" value="Change Password" class="btn btn-primary btn-large button">
-  </form>
-
-  <div id="main-div">
-  </div>
-  <div id="details-div">
-  </div>
+  </main>
 </body>
 
 </html>

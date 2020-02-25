@@ -2,13 +2,14 @@
 // const getFormFields = require('./../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
+const commonUi = require('../commonUi')
 const getFormFields = require('./../../../lib/get-form-fields')
 
 const onGetIndex = (event) => {
   event.preventDefault()
   api.getCalendars()
-    .then(ui.onGetCalendarsSuccess)
-    .catch(ui.onGetCalendarsFail)
+    .then(ui.onGetIndexCalendarsSuccess)
+    .catch(ui.onGetIndexCalendarsFail)
 }
 
 const onCreate = (event) => {
@@ -16,17 +17,25 @@ const onCreate = (event) => {
   const form = event.target.closest('form')
   const formData = getFormFields(form)
   api.createCalendar(formData)
-    .then(api.getCalendars)
-    .then(ui.onGetCalendarsSuccess)
-    .catch(ui.onAddCalendarsFail)
+    .then(function () {
+      return onGetIndex(event)
+    })
+    .then(function () {
+      commonUi.showMessage('Calendar created')
+    })
+    .catch(ui.onCreateCalendarFail)
 }
 
 const onDelete = (event) => {
   event.preventDefault()
   const id = $(event.target).data('id')
   api.deleteCalendar(id)
-    .then(api.getCalendars)
-    .then(ui.onGetCalendarsSuccess)
+    .then(function () {
+      return onGetIndex(event)
+    })
+    .then(function () {
+      commonUi.showMessage('Calendar deleted')
+    })
     .catch(ui.onDeleteCalendarsFail)
 }
 
@@ -36,8 +45,12 @@ const onUpdate = (event) => {
   const form = event.target.closest('form')
   const formData = getFormFields(form)
   api.updateCalendar(formData)
-    .then(api.getCalendars)
-    .then(ui.onGetCalendarsSuccess)
+    .then(function () {
+      return onGetIndex(event)
+    })
+    .then(function () {
+      commonUi.showMessage('Calendar updated')
+    })
     .catch(ui.onGetUpdateFail)
 }
 

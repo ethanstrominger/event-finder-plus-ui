@@ -6,19 +6,22 @@ const showNewCalendarTemplate = require('../templates/calendar-new.handlebars')
 
 const gotoCalendar = (event) => {
   event.preventDefault()
+  commonUi.hideMessage()
   const calendarDetail = $(event.target).closest('tr').data('data-obj')
   const showHtml = showCalendarTemplate(calendarDetail)
   commonUi.hideScreens()
+  $('#buttons-when-signed-in').hide()
   $('#details-div').show()
   $('#details-div').html(showHtml)
   event.preventDefault()
 }
 
 const gotoNewCalendar = (event) => {
+  commonUi.hideMessage()
   event.preventDefault()
-  console.log('Go to new calendar')
   const showHtml = showNewCalendarTemplate()
   commonUi.hideScreens()
+  $('#buttons-when-signed-in').hide()
   $('#details-div').show()
   $('#details-div').html(showHtml)
 }
@@ -27,23 +30,23 @@ const backToCalendarsFromForm = (event) => {
   event.preventDefault()
   const form = event.target.closest('form')
   // const values = getFormFields(form)
+  commonUi.showScreen('#buttons-when-signed-in')
   $(form).remove()
   commonUi.showScreen('#main-div')
   // $('#main-div').html('<p>Goto calendar list</p>')
 }
 
-const onGetCalendarsSuccess = (data) => {
-  console.log('onGet')
-  console.log(data)
+const onGetIndexCalendarsSuccess = (data) => {
   const showHtml = showCalendarsTemplate({
     calendars: data.calendars
   })
   commonUi.hideScreens()
+  commonUi.showScreen('#buttons-when-signed-in')
   commonUi.showScreen('#main-div')
   $('#main-div').html(showHtml)
 }
 
-const onGetCalendarsFail = (response) => {
+const onGetIndexCalendarsFail = (response) => {
   commonUi.showError('Calendars could not be listed', response)
 }
 
@@ -59,8 +62,8 @@ module.exports = {
   gotoCalendar,
   backToCalendarsFromForm,
   gotoNewCalendar,
-  onGetCalendarsFail,
-  onGetCalendarsSuccess,
   onDeleteFail,
-  onUpdateFail
+  onUpdateFail,
+  onGetIndexCalendarsFail,
+  onGetIndexCalendarsSuccess
 }

@@ -17,21 +17,41 @@ const onClickSignIn = (event) => {
 const onClickChangePassword = (event) => {
   ui.gotoChangePasswordScreen()
 }
-
+// aa
 const onSignUp = (event) => {
   event.preventDefault()
   const form = event.target
-  const signInData = getFormFields(form)
-  api.signUp(signInData)
-    .then(ui.onSignUpSuccess)
+  const signupData = getFormFields(form)
+
+  api.signUp(signupData)
+    .then(function () {
+      signinUsingFormData(signupData)
+        .then(ui.onSignInSuccess)
+    })
+    .then(
+      $('#sign-up-form').trigger('reset')
+    )
+    .then(function () {
+      calendarEvents.onGetIndex(event)
+    })
     .catch(ui.onSignUpFail)
+}
+
+const signinUsingFormData = (formData) => {
+  const email = formData.credentials.email
+  const password = formData.credentials.password
+  const signinData = {credentials: {email: email, password: password}}
+  return api.signIn(signinData)
 }
 
 const onSignIn = (event) => {
   event.preventDefault()
   const form = event.target
-  const signInData = getFormFields(form)
-  api.signIn(signInData)
+  const formData = getFormFields(form)
+  const email = formData.credentials.email
+  const password = formData.credentials.password
+  const signinData = {credentials: {email: email, password: password}}
+  signinUsingFormData(signinData)
     .then(ui.onSignInSuccess)
     .then(function () {
       calendarEvents.onGetIndex(event)

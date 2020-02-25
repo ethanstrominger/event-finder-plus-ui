@@ -1,12 +1,8 @@
-{{log "A"}}
-{{log calendars}}
-{{log "x"}}
 {{#unless calendars}}
     <p>There are no calendar links.  Click New to add an item.</p>
 {{/unless}}
 <table border="1">
 {{#each calendars as |calendar|}}
-  {{log calendar}}
   <tr class="calendar-row"  data-data-obj="{{JSONtoString calendar}}">
     <td>
       {{calendar.name}}
