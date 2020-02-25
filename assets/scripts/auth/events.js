@@ -2,6 +2,7 @@
 const getFormFields = require('./../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
+const commonUi = require('../commonUi')
 // const calendarUi = require('../calendars/ui')
 // const calendarApi = require('../calendars/api')
 const calendarEvents = require('../calendars/events')
@@ -25,7 +26,7 @@ const onSignUp = (event) => {
 
   api.signUp(signupData)
     .then(function () {
-      signinUsingFormData(signupData)
+      return signinUsingFormData(signupData)
         .then(ui.onSignInSuccess)
     })
     .then(
@@ -64,7 +65,12 @@ const onChangePw = (event) => {
   const form = event.target
   const signInData = getFormFields(form)
   api.changePw(signInData)
-    .then(ui.onChangePwSuccess)
+    .then(function () {
+      return calendarEvents.onGetIndex(event)
+    })
+    .then(function () {
+      commonUi.showMessage('Password changed')
+    })
     .catch(ui.onChangePwFail)
 }
 

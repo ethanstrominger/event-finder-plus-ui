@@ -18,10 +18,10 @@ const onCreate = (event) => {
   const formData = getFormFields(form)
   api.createCalendar(formData)
     .then(function () {
-      return onGetIndex(event)
-    })
-    .then(function () {
-      commonUi.showMessage('Calendar created')
+      const name = formData.calendar.name
+      commonUi.showMessage(
+        `Calendar ${name} created.  Enter a new calendar or press back.`)
+      $('#new-calendar-form').trigger('reset')
     })
     .catch(ui.onCreateCalendarFail)
 }

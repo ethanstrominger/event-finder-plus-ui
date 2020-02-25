@@ -16,6 +16,8 @@ const gotoSignInScreen = () => {
 
 const gotoChangePasswordScreen = () => {
   commonUi.hideScreens()
+  commonUi.hideMessage()
+  $('#buttons-when-signed-in').hide()
   $('#change-password-form').trigger('reset')
   commonUi.showScreen('#change-password-form')
 }
@@ -49,6 +51,9 @@ const onChangePwSuccess = function (response) {
   commonUi.showMessage('Successfully changed password')
   $('#change-password-form').trigger('reset')
   $('#change-password-form').hide()
+  commonUi.hideScreens()
+  commonUi.showScreen('#buttons-when-signed-in')
+  commonUi.showScreen('#main-div')
 }
 
 const onChangePwFail = function (response) {

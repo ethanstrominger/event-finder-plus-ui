@@ -28,6 +28,7 @@ const ajaxCall = (method, endPoint, data, useToken) => {
   if (data !== undefined) {
     ajaxArg.data = data
   }
+
   const retVal = $.ajax(ajaxArg)
   return retVal
 }

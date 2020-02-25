@@ -23,7 +23,9 @@ const _setupEventListeners = () => {
   $('#details-div').on('submit', '#new-calendar-form', calendarEvents.onCreate)
   // $('#details-div').on('submit', '#calendar-form', calendarUi.onCreate)
   $('#details-div').on('click', '#delete-calendar-button', calendarEvents.onDelete)
-  $('#details-div').on('click', '#back-from-calendar-button', calendarUi.backToCalendarsFromForm)
+  $('#details-div').on('click', '#back-to-calendar-button', calendarUi.backToCalendarsFromForm)
+  $('#details-div').on('click', '#back-from-new-calendar-button', calendarEvents.onGetIndex)
+  $('#back-to-calendar-button').on('click', calendarUi.backToCalendarsFromForm)
 }
 
 // use require without a reference to ensure a file is bundled
