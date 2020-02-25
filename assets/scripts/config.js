@@ -2,7 +2,7 @@
 
 let apiUrl
 const apiUrls = {
-  production: 'https://ethanstrominger.github.io/event-finder-plus-ui/',
+  production: 'https://ethanstrominger.github.io/event-finder-plus-ui',
   development: 'http://localhost:4741'
 }
 
