@@ -24,11 +24,11 @@ A2
 
 1. [X] get update to update
 
-1. [ ] show only records belonging to user (db)
+1. [X] show only records belonging to user (db)
 
-2. [ ] add return to list button + functionality
-3. [ ] add delete button + functionality
+2. [X] add return to list button + functionality
+3. [X] add delete button + functionality
 
-1. [ ] add buttons to list screen for sign out and change password
+1. [X] add buttons to list screen for sign out and change password
 
 1. [ ] Refactor index.html to all use handlebars to modularize

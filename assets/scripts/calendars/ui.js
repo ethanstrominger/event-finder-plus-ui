@@ -1,5 +1,5 @@
 const commonUi = require('./../commonUi')
-const showCalendarLinksTemplate = require('../templates/calendars.handlebars')
+const showCalendarsTemplate = require('../templates/calendars.handlebars')
 const showCalendarTemplate = require('../templates/calendar.handlebars')
 const showNewCalendarTemplate = require('../templates/calendar-new.handlebars')
 // const getFormFields = require('./../../../lib/get-form-fields')
@@ -33,8 +33,10 @@ const backToCalendarsFromForm = (event) => {
 }
 
 const onGetCalendarsSuccess = (data) => {
-  const showHtml = showCalendarLinksTemplate({
-    calendars: data.calendar_links
+  console.log('onGet')
+  console.log(data)
+  const showHtml = showCalendarsTemplate({
+    calendars: data.calendars
   })
   commonUi.hideScreens()
   commonUi.showScreen('#main-div')

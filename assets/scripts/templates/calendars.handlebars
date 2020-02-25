@@ -1,15 +1,18 @@
+{{log "A"}}
+{{log calendars}}
+{{log "x"}}
 {{#unless calendars}}
     <p>There are no calendar links.  Click New to add an item.</p>
 {{/unless}}
 <table border="1">
-{{#each calendars as |calendar_link|}}
-  {{log calendar_link}}
-  <tr class="calendar-row"  data-data-obj="{{JSONtoString calendar_link}}">
+{{#each calendars as |calendar|}}
+  {{log calendar}}
+  <tr class="calendar-row"  data-data-obj="{{JSONtoString calendar}}">
     <td>
-      {{calendar_link.name}}
+      {{calendar.name}}
     </td>
      <td>
-      {{limit calendar_link.url 15}}
+      {{limit calendar.url 15}}
     </td>
   </tr>
 {{/each}}
