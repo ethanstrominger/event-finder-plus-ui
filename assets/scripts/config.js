@@ -2,7 +2,7 @@
 
 let apiUrl
 const apiUrls = {
-  production: 'https://ethanstrominger.github.io/event-finder-plus-ui',
+  production: 'https://hidden-ocean-17797.herokuapp.com',
   development: 'http://localhost:4741'
 }
 
