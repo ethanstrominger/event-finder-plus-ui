@@ -12,8 +12,10 @@ Postgres, Ruby on Rails, RSpec, simplecov (for code coverage)
 
 # Planning
 I followed a [checklist][checklis] of technical tasks to get to MVP.  I used
-
-[checklis]: blob/test/docs/checklist.md
+[link](docs/CHECKLIST.md)
+[link2](STYLE.md)
+[link3](./STYLE.md)
+[checklis]: blob/test/docs/CHECKLIST.md
 # Challenges
 # Backlog
 # User Stories
