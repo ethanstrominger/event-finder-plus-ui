@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Event Finder Plus</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body style="margin:12px;padding:12px">
+  <header>
+    <h1 style="margin:12px;padding:12px">Event Finder Plus 0.2.5</h1>
+  </header>
+  <p>Version 0.2 of this application stores URLs for calendars</p>
+  <p>Future versions will:</p>
+  <ul>
+    <li>download the events and notify you of any changes or new events.</li>
+    <li>download events from EventBrite and Meetup based on criteria you specify</li>
+  </ul>
+
+  <nav id="buttons-when-signed-out" class="view" style="margin:12px;padding:12px">
+    <button id="sign-in-button" class="btn btn-primary btn-large button">Sign In</button>
+    <button id="sign-up-button" class="btn btn-primary btn-large button">Sign Up</button>
+  </nav>
+  <nav id="buttons-when-signed-in" style="display: None" class="view" style="margin:12px;padding:12px">
+    <button id="sign-out-button" class="btn btn-primary btn-large button">Sign Out</button>
+    <button id="change-password-button" class="btn btn-primary btn-large button">Change Pasword</button>
+    <button id="new-calendar-button" class="btn btn-primary btn-large button">New</button>
+  </nav>
+  <main>
+    <div id="message" class="view info" style="margin:12px;padding:16px"></div>
+
+    <form id="sign-up-form" class="view form" style="display: None">
+      <label for="email">Email</label>
+      <input name="credentials[email]" class="form-control" type="email" placeholder="an@example.com">
+      <label for="password">Password</label>
+      <input name="credentials[password]" class="form-control" type="password" placeholder="Enter password">
+      <label for="password_confirmation">Confirm Password</label>
+      <input name="credentials[password_confirmation]" class="form-control" type="password" placeholder="Confirm password">
+      <input type="submit" value="Sign Up" class="btn btn-primary btn-large button">
+    </form>
+
+    <form id="sign-in-form" class="view form" style="display: none">
+      <label for="email">Email</label>
+      <input name="credentials[email]" class="form-control" type="email"
+        placeholder="an@example.com">
+      <label for="password">Password</label>
+      <input name="credentials[password]" class="form-control" type="password"
+        placeholder="Enter password">
+      <input type="submit" value="Sign In"
+        class="btn btn-primary btn-large button">
+    </form>
+
+    <form id="change-password-form" class="view form" style="display: None">
+      <label for="old">Old Password</label>
+      <input name="passwords[old]" type="password" class="form-control"
+        placeholder="Enter old password">
+      <label for="new">New Password</label>
+      <input name="passwords[new]" type="password" class="form-control"
+        placeholder="Enter new password">
+      <input type="submit" value="Change Password"
+        class="btn btn-primary btn-large button">
+      <input id="back-to-calendar-from-change-password-button"
+        type="button" value="Back" class="btn btn-primary btn-large button">
+    </form>
+
+    <div id="main-div" class='container'>
+    </div>
+
+    <div id="details-div">
+    </div>
+
+  </main>
+</body>
+
+</html>
