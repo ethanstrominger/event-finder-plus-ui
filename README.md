@@ -16,7 +16,7 @@ I followed a [checklist][checklis] of technical tasks to get to MVP.  I used
 [link2](STYLE.md)
 [link3](./STYLE.md)
 
-[checklis]: blob/test/docs/CHECKLIST.md
+[checklis]: docs/CHECKLIST.md
 # Challenges
 # Backlog
 # User Stories
