@@ -6,8 +6,8 @@ In order to get a satisfactory score, by the time you present your project, you
 ### Deployment
 Be deployed online, where the rest of the world can access it.
 1.  [X]  Host on your public Github page, not Github Enterprise.
-1.  [ ]  Deploy client application on GH pages.
-1.  [ ]  Deploy server application on Heroku.
+1.  [X]  Deploy client application on GH pages.
+1.  [X]  Deploy server application on Heroku.
 
 ### Version Control
 Demonstrate using version control by:
@@ -19,21 +19,21 @@ of the project week.
 
 ### Documentation
 Produce documentation in the form of a **README**, which must:
-1.  [ ] Create 2 Github repos (one for your front-end and one for your back-end)
+1.  [X] Create 2 Github repos (one for your front-end and one for your back-end)
 1.  [ ] Pin both repositories on GitHub as a Popular Repository
-1.  [ ] Each repo will need a README.md file with a link to the other repo and an explanation of the what the app does and how it works.
-1.  [ ] Each repo must contain the link to both deployed sites
+1.  [X] Each repo will need a README.md file with a link to the other repo and an explanation of the what the app does and how it works.
+1.  [X] Each repo must contain the link to both deployed sites
 1.  [ ] Complete the repository `Description` field and `Website` field with a meaningful sentence description of the application and link to the live URL
 ![github image](https://git.generalassemb.ly/storage/user/3667/files/beae41ae-aaaa-11e7-8867-63958d376a0b)
-1.  [ ] List technologies used
-1.  [ ] List unsolved problems which would be fixed in future iterations.
-1.  [ ] Document your planning and tell a story about your development process and problem-solving strategy.
+1.  [X] List technologies used
+1.  [X] List unsolved problems which would be fixed in future iterations.
+1.  [X] Document your planning and tell a story about your development process and problem-solving strategy.
 
 Your front-end repo's README should also have
-1.  [ ] Link to wireframes and user stories.
+1.  [X] Link to wireframes and user stories.
 
 Your back-end repo's README should also have
-1.  [ ] Link to Entity Relationship Diagram (ERD).
+1.  [X] Link to Entity Relationship Diagram (ERD).
 
 ### Auth Specifications
 1.  [X] Signup with email, password, and password confirmation.
@@ -50,7 +50,7 @@ Your back-end repo's README should also have
 1.  [X] Use a front-end Javascript app to communicate with your API (both read and write) and render data that it receives in the browser.
 1.  [X] Use jQuery for DOM manipulation and event handling.
 1.  [X] Use Handlebars for view rendering.
-1.  [ ] Have semantically clean HTML and CSS
+1.  [X] Have semantically clean HTML and CSS
 1.  [X] User must be able to create a new resource
 1.  [X] User must be able to update a resource
 1.  [X] User must be able to delete a resource

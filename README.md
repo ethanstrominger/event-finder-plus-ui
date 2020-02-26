@@ -87,6 +87,10 @@ see [backlog](#backlog).
 
 # Backlog <a name="backlog"> </a>
 
+- Features/behavior planned for 0.3, but deferred
+  - Incude a field for confirming password when committing
+  - Create automated feature tests for all features (one done)
+  - Create unit tests for routing and controllers.
 - Technical debt
   - Exception when catch
   - Move functions from ui to events

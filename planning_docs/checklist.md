@@ -28,7 +28,7 @@ Client
 1.  [X] [Deploy to Github Pages](https://git.generalassemb.ly/ga-wdi-boston/gh-pages-deployment-guide)
 
 ### API
-1.  [?] Review [rails-api-one-to-many](https://git.generalassemb.ly/ga-wdi-boston/rails-api-one-to-many) or [rails-api-many-to-many](https://git.generalassemb.ly/ga-wdi-boston/rails-api-many-to-many)
+1.  [X] Review [rails-api-one-to-many](https://git.generalassemb.ly/ga-wdi-boston/rails-api-one-to-many) or [rails-api-many-to-many](https://git.generalassemb.ly/ga-wdi-boston/rails-api-many-to-many)
 1.  [X] Scaffold your resource
 1.  [X] Test your resource's end points with curl scripts
 1.  [X] Update resource controller to inherit from Protected or OpenRead controller
@@ -50,6 +50,6 @@ Client
 1.  [X] Update single resource (curl then web app)
 
 ### Final Touches
-1.  [ ] README
-2.  [ ] Troubleshoot/Debug
-3.  [ ] Style
+1.  [X] README
+2.  [X] Troubleshoot/Debug
+3.  [X] Style
