@@ -1,15 +1,22 @@
-This repository includes code for Event Finder Plus.  For backend, see [backend][backend]
+[checklist]: planning_docs/checklist.md
+[issues]: planning_docs/issues.md
+[tasks]: planning_docs/tasks.md
+[requirements]: planning_docs/requirements.md
+[issues]: planning_docs/issues.md
+[stories]: planning_docs/stories.md
+
+This repository includes code for the Event Finder Plus UI.  Most of the documentation for this project can be found here, with the exception of the ERD, which is stored on the backend.  For backend code and documentation, see [backend][backend].
 
 [backend]: https://github.com/ethanstrominger/EventFinderPlus/
 
-[Project Description ](#project-description)
-[Technologies Used ](#technologies-used)
-[Planning ](#planning)
-[Execution ](#Execution)
-[Challenges ](#challenges)
-[Backlog ](#backlog)
-[User Stories Summary ](#user-stories-summary)
-[Mockups ](#mockups)
+- [Project Description ](#project-description)
+- [Technologies Used ](#technologies-used)
+  - [Planning ](#planning)
+- [Execution ](#execution)
+- [Challenges ](#challenges)
+- [Backlog ](#backlog)
+- [User Stories Summary ](#user-stories-summary)
+- [Mockups ](#mockups)
 
 # Project Description <a name="project-description"> </a>
 Version 0.2.x of this project lets you create and update a list of calendars with the URL.  While limited in scope, the project provides a template and framework for version 1.x. Version 1.0 will enable you to download all the events associated with the calendar, write notes about the events, and be notified when any new events appear or existing events change.  Version 1.1 will download events from EventBrite and Meetup with criteria you specify.
@@ -25,7 +32,7 @@ Postgres, Ruby on Rails, RSpec, simplecov (for code coverage)
 
 I created the following planning docs
 - [stories][stories]
-- [high level story summary][stories summary]
+- [high level story summary](#user-stories-summary)
 - ERD (see [backend][backend] for more details)
 
 I reviewed
@@ -40,14 +47,6 @@ For debugging, I reviewed output from the developer tool, I used console.log to 
 When I completed most of the [checklist][checklist], I reviewed the [requirements][requirements] and did a final round of bug testing and reviewing UI.
 
 I then posted for review by others.
-
-[checklist]: planning_docs/checklist.md
-[issues]: planning_docs/issues.md
-[tasks]: planning_docs/tasks.md
-[requirements]: planning_docs/requirements.md
-[issues]: planning_docs/issues.md
-[stories]: planning_docs/stories.md
-
 
 # Challenges <a name="challenges"> </a>
 # Backlog <a name="backlog"> </a>
