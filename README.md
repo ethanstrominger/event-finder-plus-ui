@@ -105,6 +105,12 @@ For more details on stories, see [stories][stories].
 # Will this work?
 ![Home Page](markdown_images/drawio/mockup-homepage.png)
 
+The following link is what's used below.
+
+    ![Kiku](images/Kiku.jpg)
+
+![Kiku](images/Kiku.jpg)
+
 # Mockups <a name="mockups"> </a>
 ![Home Page](https://github.com/ethanstrominger/event-finder-plus-ui/blob/master/markdown_images/drawio/mockup-homepage.png?raw=true)
 
