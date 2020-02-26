@@ -103,7 +103,7 @@ For more details on stories, see [stories][stories].
 For more details on stories, see [stories][stories].
 
 # Will this work?
-![Home Page](markdown_images/drawio/mockup-homepage.png?raw=true)
+![Home Page](markdown_images/drawio/mockup-homepage.png)
 
 # Mockups <a name="mockups"> </a>
 ![Home Page](https://github.com/ethanstrominger/event-finder-plus-ui/blob/master/markdown_images/drawio/mockup-homepage.png?raw=true)
