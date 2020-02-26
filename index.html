@@ -15,7 +15,7 @@
 
 <body style="margin:12px;padding:12px">
   <header>
-    <h1 style="margin:12px;padding:12px">Event Finder Plus 0.2.3</h1>
+    <h1 style="margin:12px;padding:12px">Event Finder Plus 0.2.4</h1>
   </header>
   <p>Version 0.2 of this application stores URLs for calendars</p>
   <p>Future versions will:</p>
@@ -48,19 +48,26 @@
 
     <form id="sign-in-form" class="view form" style="display: none">
       <label for="email">Email</label>
-      <input name="credentials[email]" class="form-control" type="text" placeholder="an@example.com">
+      <input name="credentials[email]" class="form-control" type="text"
+        placeholder="an@example.com">
       <label for="password">Password</label>
-      <input name="credentials[password]" class="form-control" type="password" placeholder="Enter password">
-      <input type="submit" value="Sign In" class="btn btn-primary btn-large button">
+      <input name="credentials[password]" class="form-control" type="password"
+        placeholder="Enter password">
+      <input type="submit" value="Sign In"
+        class="btn btn-primary btn-large button">
     </form>
 
     <form id="change-password-form" class="view form" style="display: None">
       <label for="old">Old Password</label>
-      <input name="passwords[old]" type="password" class="form-control" placeholder="Enter old password">
+      <input name="passwords[old]" type="password" class="form-control"
+        placeholder="Enter old password">
       <label for="new">New Password</label>
-      <input name="passwords[new]" type="password" class="form-control" placeholder="Enter new password">
-      <input type="submit" value="Change Password" class="btn btn-primary btn-large button">
-      <input id="back-to-calendar-button" type="button" value="Back" class="btn btn-primary btn-large button">
+      <input name="passwords[new]" type="password" class="form-control"
+        placeholder="Enter new password">
+      <input type="submit" value="Change Password"
+        class="btn btn-primary btn-large button">
+      <input id="back-to-calendar-from-change-password-button"
+        type="button" value="Back" class="btn btn-primary btn-large button">
     </form>
 
     <div id="main-div" class='container'>

@@ -11,7 +11,7 @@ This repository includes code for the Event Finder Plus UI.  Most of the documen
 
 - [Project Description ](#project-description)
 - [Technologies Used ](#technologies-used)
-  - [Planning ](#planning)
+- [Planning ](#planning)
 - [Execution ](#execution)
 - [Challenges ](#challenges)
 - [Backlog ](#backlog)
@@ -49,6 +49,42 @@ When I completed most of the [checklist][checklist], I reviewed the [requirement
 I then posted for review by others.
 
 # Challenges <a name="challenges"> </a>
-# Backlog <a name="backlog"> </a>
+- Too obsessed (what about the rest of my life)
+- Mind racing too much?  Checklists and task list helped.
+- Chaining of promises, catches sometimes obscured errors
+- Not knowing what was sent to server, implemented complex logging on server, would have been easier to implement on UI, print args.  Was interesting though
+- Doing too much (show particularly egregious case)
+
+
 # User Stories Summary <a name="user-stories-summary"> </a>
+At a high level, 0.2 implemented
+  - Backend
+    - CRUD for calendars resource on backend
+    - Add foreign key relation to users
+    - Restrict index to only show calendars created by user
+    - Create an RSpec test for get (was planning on doing all)
+  - Front end
+    - Create account
+    - Sign in
+    - CRUD for calendars
+    - Change passwords
+
+For more details on stories, see [stories][stories].
+
+# Backlog <a name="backlog"> </a>
+
+- Technical debt
+  - Exception when catch
+  - Move functions from ui to events
+  - Move everything to handlebars
+- Features
+  - Load calendar events from calendar URL
+  - Load from EventBrite and Meetup
+  - Cache sign in info so don't need to sign in again.  If signed in, bring right to list screen on refresh
+- UI
+  - Hide buttons when go to Sign In and Sign Up screens
+  - Hide message bar rather than set text to blank, which leaves green bar
+
+For more details on stories, see [stories][stories].
+
 # Mockups <a name="mockups"> </a>

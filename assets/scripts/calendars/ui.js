@@ -36,6 +36,15 @@ const backToCalendarsFromForm = (event) => {
   // $('#main-div').html('<p>Goto calendar list</p>')
 }
 
+const backToCalendarsFromChangePassword = (event) => {
+  event.preventDefault()
+  // const values = getFormFields(form)
+  commonUi.showScreen('#buttons-when-signed-in')
+  $('#change-password-form').hide()
+  commonUi.showScreen('#main-div')
+  // $('#main-div').html('<p>Goto calendar list</p>')
+}
+
 const onGetIndexCalendarsSuccess = (data) => {
   const showHtml = showCalendarsTemplate({
     calendars: data.calendars
@@ -61,6 +70,7 @@ const onUpdateFail = (response) => {
 module.exports = {
   gotoCalendar,
   backToCalendarsFromForm,
+  backToCalendarsFromChangePassword,
   gotoNewCalendar,
   onDeleteFail,
   onUpdateFail,

@@ -43,7 +43,8 @@ A2
 1. [ ] STORIES.md
 2. [ ] New - let user keep adding new
 
-1. [ ] Rename back-to-calendar-button to back-to-calendars-button
+1. [ ] Completely hide message bar rather than set text to blank
+2. [ ] Rename back-to-calendar-button to back-to-calendars-button
 2. [ ] Fix back on change password so it does not requery calendars
 2. [ ] Hide buttons when signing in and signing up and add back button
 2. [ ] Add more detail to error message, if possible.  Investigate response
@@ -53,13 +54,22 @@ A2
 
 Future
 
+Technical debt
+
 1. [ ] Refactor index.html to all use handlebars to modularize
+2. [ ] Refactor back to calendars from change password method to use
+same as when going back from update
 1. [ ] Refactor for btn classes to use a variable
-1. [ ] More more attractive
 2. [ ] Enter stories into trello
-2. [ ] Debug capabilities
 2. [ ] Load events from calendars
+
+UI
+1. [ ] Make more attractive (like Sam's!)
 1. [ ] Add validator for backend
    1. [ ] Use validator with frontend
 1. [ ] Password reset by email
-2. [ ] Administrator role:
+
+Features
+See [stories][stories]
+
+[stories]: planning_docs/stories.md
