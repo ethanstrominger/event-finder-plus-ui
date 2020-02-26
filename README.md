@@ -17,7 +17,7 @@ This repository includes code for the Event Finder Plus UI.  Most of the documen
 - [Challenges ](#challenges)
 - [Backlog ](#backlog)
 - [User Stories Summary ](#user-stories-summary)
-- [Mockups ](#mockups)
+- [Wireframes](#wireframes)
 
 # Project Description <a name="project-description"> </a>
 Version 0.2.x of this project lets you create and update a list of calendars with the URL.  While limited in scope, the project provides a template and framework for version 1.x. Version 1.0 will enable you to download all the events associated with the calendar, write notes about the events, and be notified when any new events appear or existing events change.  Version 1.1 will download events from EventBrite and Meetup with criteria you specify.
@@ -59,9 +59,9 @@ For 0.3, I will add backend feature level tests for existing features and do som
 backend.  Depending on how much time the unit tests take, I will complete all
 unit tests.
 
-UI tests will be evaluated for 0.3.  These are more difficult and fragile because
+Automated UI tests will be evaluated for 0.3.  These are more difficult and fragile because
 the UI depends so much on interactions between elements and small changes can
-cause the tests to break..
+cause the tests to break.
 
 # Challenges <a name="challenges"> </a>
 - Chaining of promises, catches sometimes obscured errors.  **Solution:** Raise exceptions in catches, review promises, and review my code.
@@ -84,7 +84,8 @@ At a high level, 0.2 implemented
     - CRUD for calendars
     - Change passwords
 
-For more details on stories, see [stories][stories].
+For more details on stories, see [stories][stories].  For a summary of backlog,
+see [backlog](#backlog).
 
 # Backlog <a name="backlog"> </a>
 
@@ -102,24 +103,15 @@ For more details on stories, see [stories][stories].
 
 For more details on stories, see [stories][stories].
 
-# Will this work?
-![Home Page](markdown_images/drawio/mockup-homepage.png)
+# Wireframes <a name="wireframes"> </a>
+![Home Page](markdown_images/drawio/mockup-homepage.png?raw=true)
 
-The following link is what's used below.
+![Sign Up](markdown_images/drawio/mockup-signup.png?raw=true)
 
-    ![Kiku](images/Kiku.jpg)
+![Website List](markdown_images/drawio/mockup-website-list.png?raw=true)
 
-![Kiku](images/Kiku.jpg)
+![Edit Page](markdown_images/drawio/mockup-edit.png?raw=true)
 
-# Mockups <a name="mockups"> </a>
-![Home Page](https://github.com/ethanstrominger/event-finder-plus-ui/blob/master/markdown_images/drawio/mockup-homepage.png?raw=true)
+![New Page](markdown_images/drawio/mockup-new.png?raw=true)
 
-![Sign Up](https://github.com/ethanstrominger/event-finder-plus-ui/blob/master/markdown_images/drawio/mockup-signup.png?raw=true)
-
-![Website List](https://github.com/ethanstrominger/event-finder-plus-ui/blob/master/markdown_images/drawio/mockup-website-list.png?raw=true)
-
-![Edit Page](https://github.com/ethanstrominger/event-finder-plus-ui/blob/master/markdown_images/drawio/mockup-edit.png?raw=true)
-
-![New Page](https://github.com/ethanstrominger/event-finder-plus-ui/blob/master/markdown_images/drawio/mockup-new.png?raw=true)
-
-![Change Password](https://github.com/ethanstrominger/event-finder-plus-ui/blob/master/markdown_images/drawio/mockup-change-password.png?raw=true)
+![Change Password](markdown_images/drawio/mockup-change-password.png?raw=true)
