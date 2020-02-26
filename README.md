@@ -49,12 +49,12 @@ When I completed most of the [checklist][checklist], I reviewed the [requirement
 I then posted for review by others.
 
 # Challenges <a name="challenges"> </a>
-- Too obsessed (what about the rest of my life)
-- Mind racing too much?  Checklists and task list helped.
-- Chaining of promises, catches sometimes obscured errors
-- Not knowing what was sent to server, implemented complex logging on server, would have been easier to implement on UI, print args.  Was interesting though
-- Doing too much (show particularly egregious case)
-
+- Chaining of promises, catches sometimes obscured errors.  **Solution:** Raise exceptions in catches, review promises, and review my code.
+- Not knowing what was sent to server, implemented complex logging on server, would have been easier to implement on UI, print args.  Was interesting though. **Solution:** Implement logging on server or add debug message on UI.
+- Doing too much (show particularly egregious case) **Solution:** Always fix one thing at a time, minimize files changed if possible.
+- Adding shared code proved tricky in UI, as differences in elements can cause different behavior.  **Example:** Bug occurred when I had a method that dir $(form).remove that was called from handlebar and then called it from index.html.  When called from index.html, form was permanently removed.  **Solution:** Do more testing when sharing code.  Move everythng to handlebars so elements are more similar.
+- Too obsessed (what about the rest of my life).  **Solution:** Bike (I do this).  Schedule time during the week to do something with my wife.
+- Mind racing too much?  **Solution:** Checklists and task list helped.
 
 # User Stories Summary <a name="user-stories-summary"> </a>
 At a high level, 0.2 implemented
