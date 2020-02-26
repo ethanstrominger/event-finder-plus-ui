@@ -3,16 +3,17 @@
 {{else}}
   <br/>
   <p>==> Click on row to update or delete</p>
+  <table border="1">
+    <tr><th>Name</th><th>URL</th></tr>
+  {{#each calendars as |calendar|}}
+    <tr class="calendar-row"  data-data-obj="{{JSONtoString calendar}}">
+      <td>
+        {{calendar.name}}
+      </td>
+       <td>
+        {{limit calendar.url 15}}
+      </td>
+    </tr>
+  {{/each}}
+  </table>
 {{/unless}}
-<table border="1">
-{{#each calendars as |calendar|}}
-  <tr class="calendar-row"  data-data-obj="{{JSONtoString calendar}}">
-    <td>
-      {{calendar.name}}
-    </td>
-     <td>
-      {{limit calendar.url 15}}
-    </td>
-  </tr>
-{{/each}}
-</table>
