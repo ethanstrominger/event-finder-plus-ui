@@ -13,7 +13,7 @@ Postgres, Ruby on Rails, RSpec, simplecov (for code coverage)
 # Planning
 I followed a [checklist][checklis] of technical tasks to get to MVP.  I used
 
-[checklist]: planning_docs/checklist.md
+[checklis]: planning_docs/checklist.md
 # Challenges
 # Backlog
 # User Stories
