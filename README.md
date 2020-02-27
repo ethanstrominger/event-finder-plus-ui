@@ -53,6 +53,13 @@ When I completed most of the [checklist][checklist], I reviewed the [requirement
 
 I then posted for review by others.
 
+# Technologies Used <a name="technologies-used"> </a>
+Backend:
+Postgres, Ruby on Rails, RSpec, simplecov (for code coverage)
+
+Front end:
+JavaScript, HTML handlebars, BootStrap, CSS
+
 # Testing <a name="testing"> </a>
 For information on backend testing, see backend][backend] documentation.
 
@@ -62,12 +69,88 @@ the UI depends so much on interactions between elements and small changes can
 cause the tests to break.
 
 # Challenges <a name="challenges"> </a>
-- Chaining of promises, catches sometimes obscured errors.  **Solution:** Raise exceptions in catches, review promises, and review my code.
+- Chaining of promises, catches sometimes obscured errors.  **Solution:** Raise exceptions in catches, review promises, and review my code.  See details below for more info.
 - Not knowing what was sent to server, implemented complex logging on server, would have been easier to implement on UI, print args.  Was interesting though. **Solution:** Implement logging on server or add debug message on UI.
-- Doing too much (show particularly egregious case) **Solution:** Always fix one thing at a time, minimize files changed if possible.
+- Doing too much in one commit **Solution:** Minimize files changed and number of issues to address.  See details beow under Doing Too Much Issue
 - Adding shared code proved tricky in UI, as differences in elements can cause different behavior.  **Example:** Bug occurred when I had a method that dir $(form).remove that was called from handlebar and then called it from index.html.  When called from index.html, form was permanently removed.  **Solution:** Do more testing when sharing code.  Move everythng to handlebars so elements are more similar.
 - Too obsessed (what about the rest of my life).  **Solution:** Bike (I do this).  Schedule time during the week to do something with my wife.
-- Mind racing too much?  **Solution:** Checklists and task list helped.
+- Mind racing too much?  **Solution:** Checklists and task list helped.  Have a piece of paper handy to
+be able to write down thoughts.
+
+**Details for two of the above issues**
+
+**Understanding Promises Issue**
+In the below example, there are three asynchronous calls to sign up, log in, and then list calendars.  When I did not have return on the first then which is used to log in,
+the following .then statements did not wait for the promise to be complete.
+This meant that the onGetIndex for listing calendars was done without waiting for the results of the sign in.
+
+```js
+// Asynch call 1: sign up //
+api.signUp(signupData)
+  // Asynch call 2: sign in using form
+  .then(function () {
+    return signinUsingFormData(signupData)
+      .then(ui.onSignInSuccess)
+  })
+  .then(
+    $('#sign-up-form').trigger('reset')
+  )
+  // Asynch call 3:
+  .then(function () {
+    calendarEvents.onGetIndex(event)
+  })
+  .catch(ui.onSignUpFail)```
+
+**Doing Too Much Issue**
+
+I went through the checklist and reviewed program and found several issues and
+changes I wanted to make (see task list).  These should have been done in smaller
+related groups.  It took me a while to figure out there was a bug in index.html
+that was causing an issue.  I changed index.html to use better names for sections
+(semantics).  If I had done that separately, I would have found the error.
+
+  Misc many changes - see notes
+
+  - Modified so that sign up would automatically go to list screen, which
+  required refactoring and understanding .then.
+  - Modified so that buttons are hidden when you go to details or new
+  screen
+  - Modified index.html to use more meaningful semantic tags
+
+  From task list:
+  - Display Success messages for saving
+  - Delete message bar when go to new screen or detail screen
+  - Get rid of new button when go to new screen or detail screen
+  - Display new button when return from detail screen
+  - Sign In user after signing up
+  - Semantic
+
+  assets/scripts/auth/events.js
+  - Refactored to extract separate function for signing in
+  - Called new function from onSignin (same functionality) and
+    onSignup
+
+  assets/scripts/auth/ui.js
+  - Removed code fron onSignupSuccess for looking at user, which you
+  don't have until you sign in.
+
+  assets/scripts/calendars/events.js
+  - modified onCreate, onDelete, onUpdate to include message and
+    improved .then .catch
+
+  assets/scripts/calendars/ui.js
+  - hide message and buttons for create and detail screens
+  - removed console.log
+
+  assets/scripts/commonUi.js
+  - added hideMessage function
+
+  assets/scripts/templates/calendars.handlebars
+  - removed log statements
+
+  index.html
+  - changed semantics, added meaningful semantic tags
+
 
 # User Stories Summary <a name="user-stories-summary"> </a>
 At a high level, 0.2 implemented
