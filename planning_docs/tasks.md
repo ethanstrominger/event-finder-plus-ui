@@ -38,18 +38,19 @@ A2
 5. [X] Sign In user after signing up
 6. [X] Semantic
 
-1. [ ] Deploy
-1. [ ] README.md (see checklist)
-1. [ ] STORIES.md
-2. [ ] New - let user keep adding new
+1. [X] Deploy
+1. [X] README.md (see checklist)
+1. [X] STORIES.md
+2. [X] New - let user keep adding new
 
-1. [ ] Completely hide message bar rather than set text to blank
+1. [ ] Move below to stories
+2. [ ] Implement TODOs
+2. [ ] Completely hide message bar rather than set text to blank
 2. [ ] Rename back-to-calendar-button to back-to-calendars-button
 2. [ ] Fix back on change password so it does not requery calendars
 2. [ ] Hide buttons when signing in and signing up and add back button
 2. [ ] Add more detail to error message, if possible.  Investigate response
-2. [ ] Look at refactoring.  Take any ui out of events.  Name functions better?
-3. [ ] Write up functions
+2. [ ] Write up functions
 4. [ ] Change functions that are local to have _ in them
 
 Future

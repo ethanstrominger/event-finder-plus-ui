@@ -2,23 +2,22 @@
 [issues]: planning_docs/issues.md
 [tasks]: planning_docs/tasks.md
 [requirements]: planning_docs/requirements.md
-[issues]: planning_docs/issues.md
 [stories]: planning_docs/stories.md
 [backend]: https://github.com/ethanstrominger/event-finder-plus/
 [deployment]: (https://ethanstrominger.github.io/event-finder-plus-ui/)
 
 This repository includes code for the Event Finder Plus UI.  Most of the documentation for this project can be found here, with the exception of the ERD, which is stored on the backend.  For backend code and documentation, see [backend][backend].
 
-Application is deployed [here](https://ethanstrominger.github.io/event-finder-plus-ui/)
+Application is deployed [here][deployment]
 
-- [Project Description ](#project-description)
-- [Technologies Used ](#technologies-used)
+- [Project Description](#project-description)
+- [Technologies Used](#technologies-used)
 - [Planning](#planning)
 - [Execution](#execution)
 - [Testing](#testing)
-- [Challenges ](#challenges)
-- [Backlog ](#backlog)
-- [User Stories Summary ](#user-stories-summary)
+- [Challenges](#challenges)
+- [Backlog](#backlog)
+- [User Stories Summary](#user-stories-summary)
 - [Wireframes](#wireframes)
 
 # Project Description <a name="project-description"> </a>
@@ -40,7 +39,7 @@ I created the following planning docs
 
 I reviewed
 - technical [checklist][checklist]
-- requirements [requirements]
+- requirements [requirements][requirements]
 
 # Execution <a name="Execution"> </a>
 I started by following the [checklist][checklist].  Each commit are small
@@ -61,7 +60,7 @@ Front end:
 JavaScript, HTML handlebars, BootStrap, CSS
 
 # Testing <a name="testing"> </a>
-For information on backend testing, see backend][backend] documentation.
+For information on backend testing, see backend][backend][backend] documentation.
 
 For 0.2, all UI testing was done manually  Automated UI tests will be evaluated
 for 0.3.  These are more difficult and fragile because
@@ -69,8 +68,12 @@ the UI depends so much on interactions between elements and small changes can
 cause the tests to break.
 
 # Challenges <a name="challenges"> </a>
-- Chaining of promises, catches sometimes obscured errors.  **Solution:** Raise exceptions in catches, review promises, and review my code.  See details below for more info.
-- Not knowing what was sent to server, implemented complex logging on server, would have been easier to implement on UI, print args.  Was interesting though. **Solution:** Implement logging on server or add debug message on UI.
+- Chaining of promises, catches sometimes obscured errors.  **Solution:** Raise exceptions in catches (to do), review promises (done), and review my code (done).
+See details below for more info.
+- Not knowing what was sent to server **Solution:** Implement logging on server or (done), add debug message on UI (simpler).
+- Confusion about where functionality is located caused by:
+  - not sticking to listener, event, api, ui pattern (called ui from listner)
+  - having two buttons called "Sign Up".  Also would be an issue when trying to support user. ** Solution: Change form to "Submit")
 - Doing too much in one commit **Solution:** Minimize files changed and number of issues to address.  See details beow under Doing Too Much Issue
 - Adding shared code proved tricky in UI, as differences in elements can cause different behavior.  **Example:** Bug occurred when I had a method that dir $(form).remove that was called from handlebar and then called it from index.html.  When called from index.html, form was permanently removed.  **Solution:** Do more testing when sharing code.  Move everythng to handlebars so elements are more similar.
 - Too obsessed (what about the rest of my life).  **Solution:** Bike (I do this).  Schedule time during the week to do something with my wife.
