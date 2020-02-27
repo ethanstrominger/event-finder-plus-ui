@@ -3,12 +3,12 @@
 [tasks]: planning_docs/tasks.md
 [requirements]: planning_docs/requirements.md
 [stories]: planning_docs/stories.md
-[backend]: https://github.com/ethanstrominger/event-finder-plus/
+[backend]: https://github.com/ethanstrominger/EventFinderPlus/
 [deployment]: (https://ethanstrominger.github.io/event-finder-plus-ui/)
 
 This repository includes code for the Event Finder Plus UI.  Most of the documentation for this project can be found here, with the exception of the ERD, which is stored on the backend.  For backend code and documentation, see [backend][backend].
 
-Application is deployed [here][deployment]
+Application is deployed [here][deployment] https://ethanstrominger.github.io/event-finder-plus-ui/
 
 - [Project Description](#project-description)
 - [Technologies Used](#technologies-used)
@@ -60,7 +60,7 @@ Front end:
 JavaScript, HTML handlebars, BootStrap, CSS
 
 # Testing <a name="testing"> </a>
-For information on backend testing, see backend][backend][backend] documentation.
+For information on backend testing, see [backend][backend] documentation.
 
 For 0.2, all UI testing was done manually  Automated UI tests will be evaluated
 for 0.3.  These are more difficult and fragile because
@@ -102,7 +102,8 @@ api.signUp(signupData)
   .then(function () {
     calendarEvents.onGetIndex(event)
   })
-  .catch(ui.onSignUpFail)```
+  .catch(ui.onSignUpFail)
+```
 
 **Doing Too Much Issue**
 
@@ -171,7 +172,7 @@ At a high level, 0.2 implemented
 For more details on stories, see [stories][stories].  For a summary of backlog,
 see [backlog](#backlog).
 
-# Backlog <a name="backlog"> </a>
+# Backlog <a name="backlog"></a>
 
 - Features/behavior planned for 0.3, but deferred
   - Incude a field for confirming password when committing
@@ -191,7 +192,7 @@ see [backlog](#backlog).
 
 For more details on stories, see [stories][stories].
 
-# Wireframes <a name="wireframes"> </a>
+# Wireframes <a name="wireframes"></a>
 The wireframes were created using drawio.  Source for the images are
 [here](markdown_images/drawio).
 

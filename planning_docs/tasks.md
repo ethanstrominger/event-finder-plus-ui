@@ -43,7 +43,8 @@ A2
 1. [X] STORIES.md
 2. [X] New - let user keep adding new
 
-1. [ ] Move below to stories
+1. [ ] Change repo name from event-finder-plus to event-finder-plus-db?
+2. [ ] Move below to stories
 2. [ ] Implement TODOs
 2. [ ] Completely hide message bar rather than set text to blank
 2. [ ] Rename back-to-calendar-button to back-to-calendars-button
