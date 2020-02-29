@@ -5,7 +5,25 @@ const ui = require('./ui')
 const commonUi = require('../commonUi')
 // const calendarUi = require('../calendars/ui')
 // const calendarApi = require('../calendars/api')
+// TODO: Change onSignUp, etc to onSubmitSignUp
 const calendarEvents = require('../calendars/events')
+const calendarUi = require('../calendars/ui')
+
+const _emailAndPasswordFromFormData = (formData) => {
+  const retVal =
+    {credentials:
+      { email: formData.credentials.email,
+        password: formData.credentials.password
+      }
+    }
+  return retVal
+}
+
+const _signinUsingFormData = (formData) => {
+  // Defining emailAndPassword as formData may include extra fields
+  const emailAndPassword = _emailAndPasswordFromFormData(formData)
+  return api.signIn(emailAndPassword)
+}
 
 const onClickSignUp = (event) => {
   ui.gotoSignUpScreen()
@@ -18,46 +36,34 @@ const onClickSignIn = (event) => {
 const onClickChangePassword = (event) => {
   ui.gotoChangePasswordScreen()
 }
-// aa
-const onSignUp = (event) => {
-  event.preventDefault()
-  const form = event.target
-  const signupData = getFormFields(form)
-
-  api.signUp(signupData)
-    .then(function () {
-      return signinUsingFormData(signupData)
-        .then(ui.onSignInSuccess)
-    })
-    .then(
-      $('#sign-up-form').trigger('reset')
-    )
-    .then(function () {
-      calendarEvents.onGetIndex(event)
-    })
-    .catch(ui.onSignUpFail)
-}
-
-const signinUsingFormData = (formData) => {
-  const email = formData.credentials.email
-  const password = formData.credentials.password
-  const signinData = {credentials: {email: email, password: password}}
-  return api.signIn(signinData)
-}
 
 const onSignIn = (event) => {
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
-  const email = formData.credentials.email
-  const password = formData.credentials.password
-  const signinData = {credentials: {email: email, password: password}}
-  signinUsingFormData(signinData)
+  _signinUsingFormData(formData)
     .then(ui.onSignInSuccess)
     .then(function () {
       calendarEvents.onGetIndex(event)
     })
     .catch(ui.onSignInFail)
+}
+
+// ****** onSignUp method ******
+const onSignUp = (event) => {
+  event.preventDefault()
+  const form = event.target
+  const formData = getFormFields(form)
+  api.signUp(formData)
+    .then(ui.onSignUpSuccess)
+    .then(function () {
+      return _signinUsingFormData(formData)
+    })
+    .then(ui.onSignInSuccess)
+    .then(function () {
+      calendarUi.showCalendarsList({calendar: []})
+    })
+    .catch(ui.onSignUpFail) // TODO: Raise exception on this and all fails
 }
 
 const onChangePw = (event) => {
@@ -68,6 +74,7 @@ const onChangePw = (event) => {
     .then(function () {
       return calendarEvents.onGetIndex(event)
     })
+    // TODO: Move all showMessages to ui - below is onChangePwSuccess
     .then(function () {
       commonUi.showMessage('Password changed')
     })

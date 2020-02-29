@@ -4,6 +4,7 @@ const hideScreens = () => {
   $('#change-password-form').hide()
   $('#main-div').hide()
   $('#details-div').hide()
+  $('#message').hide()
 }
 
 const showScreen = (screen) => {
@@ -12,18 +13,21 @@ const showScreen = (screen) => {
 }
 
 const hideMessage = () => {
+  $('#message').hide()
   $('#message').text('')
 }
 
 const showMessage = (message) => {
   $('#message').css('background-color', 'green')
   $('#message').css('color', 'white')
+  $('#message').show()
   $('#message').text(message)
 }
 
 const showError = (message, response) => {
   $('#message').css('background-color', 'red')
   $('#message').css('color', 'white')
+  $('#message').show()
   $('#message').text(`${message} (${response.status} ${response.statusText})`)
 }
 

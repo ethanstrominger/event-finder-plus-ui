@@ -45,14 +45,14 @@ const backToCalendarsFromChangePassword = (event) => {
   // $('#main-div').html('<p>Goto calendar list</p>')
 }
 
-const onGetIndexCalendarsSuccess = (data) => {
-  const showHtml = showCalendarsTemplate({
-    calendars: data.calendars
-  })
-  commonUi.hideScreens()
-  commonUi.showScreen('#buttons-when-signed-in')
-  commonUi.showScreen('#main-div')
-  $('#main-div').html(showHtml)
+// called after signing up then signing in
+function displayNoCalendars () {
+  const data = {calendar: []}
+  onGetIndexCalendarsSuccess(data)
+}
+
+function onGetIndexCalendarsSuccess (data) {
+  showCalendarsList(data)
 }
 
 const onGetIndexCalendarsFail = (response) => {
@@ -67,7 +67,18 @@ const onUpdateFail = (response) => {
   commonUi.showError('Calendar could not be updated', response)
 }
 
+function showCalendarsList (data) {
+  const showHtml = showCalendarsTemplate({
+    calendars: data.calendars
+  })
+  commonUi.hideScreens()
+  commonUi.showScreen('#buttons-when-signed-in')
+  commonUi.showScreen('#main-div')
+  $('#main-div').html(showHtml)
+}
+
 module.exports = {
+  displayNoCalendars,
   gotoCalendar,
   backToCalendarsFromForm,
   backToCalendarsFromChangePassword,
@@ -75,5 +86,6 @@ module.exports = {
   onDeleteFail,
   onUpdateFail,
   onGetIndexCalendarsFail,
-  onGetIndexCalendarsSuccess
+  onGetIndexCalendarsSuccess,
+  showCalendarsList
 }
