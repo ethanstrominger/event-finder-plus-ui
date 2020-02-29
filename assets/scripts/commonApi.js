@@ -1,6 +1,6 @@
 const config = require('./config')
 const store = require('./store')
-const calendarDebug = require('./calendarDebug')
+const commonDebug = require('./commonDebug')
 
 const ajaxCall = (method, endPoint, data, useToken) => {
   // set endPoint to blank string if undefined
@@ -29,12 +29,9 @@ const ajaxCall = (method, endPoint, data, useToken) => {
   if (data !== undefined) {
     ajaxArg.data = data
   }
-  calendarDebug.debug('Ajax args')
-  calendarDebug.debug(ajaxArg)
+  commonDebug.debug('Ajax args', ajaxArg)
   const retVal = $.ajax(ajaxArg)
-  calendarDebug.debug('retVal')
-  calendarDebug.debug(retVal)
-
+  commonDebug.debug('Ajax retVal', retVal)
   return retVal
 }
 
